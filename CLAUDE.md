@@ -156,13 +156,21 @@ Work one phase at a time. Stop after each phase and summarize what changed.
 - The feature works on desktop Chrome and on a real phone over HTTPS.
 - A short note on what was built and anything left open.
 
-## Brand (resolved from the owner's reference design)
+## Brand
 
-- Font: Input Mono Condensed (`public/fonts/`), uppercase with wide letter spacing for labels and bubbles.
-- Colors: coral `#ef5b5b` (title script), sky blue `#2f7fd8` (theme), white for UI text and bubble outlines.
-- Title: the hand-lettered `public/shake-off.png`, not a font.
-- Branding: "Build by moraleja.co" text in the top-right corner, "V 0.1 // 2026" bottom-right.
-- Characters: the sheep (`oveja.png`) and the dalmatian (`perro.png`).
+- Font: Monoblock (Envato Elements license, certificate in `public/fonts/Monoblock/`). Only `public/fonts/web/*.woff2` is served and deployed; `public/fonts/` is git-ignored and `.vercelignore` publishes only `fonts/web`.
+- Title: `public/shake-off-title.png`, cream lettering. The share card uses `shake-off-ink.png`, a dark copy generated from it, because cream disappears on the white polaroid caption.
+- Background: `public/shakeoff-background2.png`.
+- Characters: `sheep-ball.png` and `dog-ball.png`, each holding an 8 ball.
+- Colors: cream `#f5f2e1` (paper, bubble), sky blue `#2f7fd8`, ink `#141414`.
+- Corner labels: "Shake Off" top left, "Build by moraleja.co" top right, "V 0.1 // 2026" bottom right.
+- When replacing an image, use a new file name. The image optimizer caches by URL, so a file overwritten under the same name can keep serving the old version.
+
+## Landing flow
+
+1. Intro: title, then the sheep (mirrored, ball toward the bubble) bobs as it "talks", typing three lines in its bubble: "Having a rough day?", "Shake the ball and get a good meme.", "Share it and send it to someone who needs it." A Skip button, or shaking the phone, jumps ahead.
+2. Shake stage: the sheep drops out, the title moves behind the balls (desktop) or stays above them (phone), and the two balls fly in. Positions follow the owner's 2000x1125 references inside a 16:9 frame (`cqw` units) on desktop.
+3. Shake: big rattle (up to about 64px and 30deg, with a squash) for 1s, then the "8" ball slides aside while the back ball comes forward with the meme in its window, then the card opens.
 
 ## Open questions for the owner
 

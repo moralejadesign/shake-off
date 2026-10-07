@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Input Mono "Testing" font files are not licensed for redistribution
+# Font files (Envato license) must not be redistributed through the public repo
 /public/fonts/

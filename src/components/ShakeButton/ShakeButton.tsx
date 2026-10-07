@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { INTRO } from "@/components/Scene/introTimeline";
+import { SHAKE_STAGE } from "@/components/Scene/introTimeline";
 import type { ShakeStatus } from "@/hooks/useShake";
 import { glassBar, glassButton, glassButtonActive } from "@/lib/buttonClasses";
 
@@ -19,10 +19,10 @@ export function ShakeButton({ onShake, disabled, sensorStatus, onEnableSensor }:
 
   return (
     <motion.div
-      className={`absolute top-[46svh] left-1/2 z-30 -translate-x-1/2 md:top-auto md:bottom-[6svh] ${glassBar}`}
+      className={`absolute bottom-[8svh] left-1/2 z-30 -translate-x-1/2 md:bottom-[6svh] ${glassBar}`}
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: reduced ? 1 : INTRO.shakeButton }}
+      transition={{ duration: 0.5, delay: reduced ? 0.3 : SHAKE_STAGE.shakeButton }}
     >
       {sensorStatus === "needs-permission" && (
         <button type="button" onClick={onEnableSensor} className={glassButton}>

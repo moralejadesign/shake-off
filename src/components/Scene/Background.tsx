@@ -12,7 +12,7 @@ export function Background() {
       transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
     >
       <Image
-        src="/shakeoff-background.png"
+        src="/shakeoff-background2.png"
         alt=""
         fill
         preload

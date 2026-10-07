@@ -12,7 +12,7 @@ export type ShakePhase = "idle" | "shaking" | "revealing" | "card";
 export type ShakeSignal = { id: number; intensity: number };
 
 export const SHAKE_TIMING = {
-  settleMs: 850,
+  settleMs: 1000,
   holdMs: 1100,
   reducedSettleMs: 300,
   reducedHoldMs: 500,

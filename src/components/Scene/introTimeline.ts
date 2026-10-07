@@ -1,18 +1,21 @@
 import type { Transition } from "motion/react";
 
-// Start times in seconds. Every element enters first, then the speech bubbles.
+// Start times in seconds for the intro: the scene, then the sheep, then its speech bubble.
 export const INTRO = {
   background: 0,
   labels: 0.3,
-  ballBack: 0.5,
-  ballFront: 0.75,
-  title: 1.15,
-  sheep: 1.9,
-  dog: 2.15,
-  sheepBubble: 2.8,
-  dogBubble: 3.4,
-  shakeButton: 3.9,
-  idle: 3.0,
+  title: 0.5,
+  sheep: 1.3,
+  bubble: 2.1,
+  skip: 2.6,
+} as const;
+
+// Start times in seconds for the shake stage, counted from when the sheep leaves.
+export const SHAKE_STAGE = {
+  ballBack: 0.35,
+  ballFront: 0.5,
+  idle: 1.6,
+  shakeButton: 1.1,
 } as const;
 
 // With reduced motion the sequence keeps its order but plays as quick fades.

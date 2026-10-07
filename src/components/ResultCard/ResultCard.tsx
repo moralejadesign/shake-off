@@ -30,7 +30,7 @@ export function ResultCard({ answer, forExport = false }: ResultCardProps) {
         className={`relative aspect-[9/16] w-full overflow-hidden bg-sky text-white ${forExport ? "" : "rounded-[3cqw] shadow-2xl"}`}
       >
         <Image
-          src="/shakeoff-background.png"
+          src="/shakeoff-background2.png"
           alt=""
           fill
           quality={90}
@@ -64,19 +64,20 @@ export function ResultCard({ answer, forExport = false }: ResultCardProps) {
             loading={loading}
             sizes={sizes(85)}
           />
+          {/* Dark copy of the brand lettering, since the cream original disappears on the white caption. */}
           <Image
-            src="/shake-off.png"
+            src="/shake-off-ink.png"
             alt="Shake Off"
-            width={1165}
-            height={336}
+            width={1650}
+            height={332}
             loading={loading}
             sizes={sizes(60)}
-            className="absolute top-[82.7%] left-[53.6%] h-auto w-[71%] -translate-x-1/2"
+            className="absolute top-[80%] left-1/2 h-auto w-[72%] -translate-x-1/2"
           />
         </div>
 
         <Image
-          src="/perro.png"
+          src="/dog-ball.png"
           alt=""
           width={1085}
           height={1450}
@@ -86,7 +87,7 @@ export function ResultCard({ answer, forExport = false }: ResultCardProps) {
         />
         {/* Mirrored, as in the reference. */}
         <Image
-          src="/oveja.png"
+          src="/sheep-ball.png"
           alt=""
           width={1092}
           height={1440}

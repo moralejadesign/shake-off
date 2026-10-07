@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
-/* The font files are not in the repo (Testing license). Add licensed files to
-   public/fonts/ with these names; without them the browser falls back to ui-monospace. */
+/* Monoblock, licensed through Envato Elements for this project. Only these web
+   files are deployed; the font files stay out of the public git repo. */
 @font-face {
-  font-family: "Input Mono Condensed";
-  src: url("/fonts/InputMonoCondensed-Regular-Testing.ttf") format("truetype");
+  font-family: "Monoblock";
+  src: url("/fonts/web/Monoblock-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Input Mono Condensed";
-  src: url("/fonts/InputMonoCondensed-Medium-Testing.ttf") format("truetype");
+  font-family: "Monoblock";
+  src: url("/fonts/web/Monoblock-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: "Input Mono Condensed";
-  src: url("/fonts/InputMonoCondensed-Bold-Testing.ttf") format("truetype");
+  font-family: "Monoblock";
+  src: url("/fonts/web/Monoblock-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 
 @theme inline {
-  --font-mono: "Input Mono Condensed", ui-monospace, monospace;
+  --font-mono: "Monoblock", ui-monospace, monospace;
   --color-sky: #2f7fd8;
   --color-coral: #ef5b5b;
-  --color-paper: #f6f1e7;
+  --color-paper: #f5f2e1;
   --color-ink: #141414;
 }
 

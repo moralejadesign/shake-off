@@ -1,0 +1,6 @@
+# Deploy only the web font files the site uses. The full Monoblock package and
+# its license certificate must not be published.
+public/fonts/*
+!public/fonts/web
+node_modules
+.next
