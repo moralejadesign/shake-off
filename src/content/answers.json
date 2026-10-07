@@ -1,0 +1,132 @@
+[
+  {
+    "id": "meme-01",
+    "imageUrl": "/memes/meme01.jpg",
+    "width": 736,
+    "height": 715,
+    "alt": "A guinea pig in heart-shaped pink sunglasses drives a pink toy car surrounded by glowing hearts. Text: Súbete, vamos a terapia.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-02",
+    "imageUrl": "/memes/meme02.jpg",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A fluffy Pomeranian in black star sunglasses sits at a table. Text: Estoy vibrando tan alto que si me tocas te electrocuto bb.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-03",
+    "imageUrl": "/memes/meme03.jpg",
+    "width": 1200,
+    "height": 1500,
+    "alt": "Close-up of a cat wearing pink sunglasses. Text: coffee and tea (confía en ti).",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-04",
+    "imageUrl": "/memes/meme04.jpg",
+    "width": 833,
+    "height": 833,
+    "alt": "A small white fluffy dog in pink goggles and a pink harness sits on a rock. Text: todo bien, ya lloré.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-05",
+    "imageUrl": "/memes/meme05.jpg",
+    "width": 720,
+    "height": 637,
+    "alt": "A cat flies through a starry space sky trailing a rainbow. Text: A pesar de todo.. Atreviéndome.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-06",
+    "imageUrl": "/memes/meme06.jpg",
+    "width": 736,
+    "height": 920,
+    "alt": "A toddler in white sunglasses leans back in a chair holding up a juice bottle. Text: Hoy no hay frases de motivación si te quieres rendir rindete.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-07",
+    "imageUrl": "/memes/meme07.jpg",
+    "width": 720,
+    "height": 700,
+    "alt": "A smiling boy in a red sweater peeks through a window. Text: Tres colapsos mentales más y ya es Navidad.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-08",
+    "imageUrl": "/memes/meme08.jpg",
+    "width": 828,
+    "height": 898,
+    "alt": "A Renaissance-style painting of a woman wearing modern headphones and typing on a computer. Text: Somos spotify y yo, contra el mundo laboral y sus desafíos.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-09",
+    "imageUrl": "/memes/meme09.jpg",
+    "width": 735,
+    "height": 576,
+    "alt": "A tan dog in black sunglasses stands in a living room. Text: No iores vato don crai.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-10",
+    "imageUrl": "/memes/meme10.jpg",
+    "width": 736,
+    "height": 792,
+    "alt": "A monkey in a white shirt and tie talks on an office phone at a computer. Text: dejame lo checo con el chatgipiti y te aviso.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-11",
+    "imageUrl": "/memes/meme11.jpg",
+    "width": 736,
+    "height": 603,
+    "alt": "An orange tabby cat puts its paw around another cat. Text: Lo estás haciendo horrible, pero no te rindas.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-12",
+    "imageUrl": "/memes/meme12.jpg",
+    "width": 526,
+    "height": 526,
+    "alt": "A cartoon cow in a party hat leaps through a blue sky over a green hill. Text: Colapsando pero avanzando.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  },
+  {
+    "id": "meme-13",
+    "imageUrl": "/memes/meme13.jpg",
+    "width": 736,
+    "height": 722,
+    "alt": "A lovebird wearing a tiny brown cowboy hat. Text: Hoy no me volví loco porque no tuve tiempo.",
+    "tags": [
+      "alt-needs-review"
+    ]
+  }
+]
