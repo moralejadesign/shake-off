@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useEffectEvent, useState } from "react";
-import { INTRO, enterTransition } from "@/components/Scene/introTimeline";
+import { TALK, enterTransition } from "@/components/Scene/introTimeline";
 import { TalkBubble } from "@/components/SpeechBubble/TalkBubble";
+import { playEffect } from "@/lib/sound";
 
 const LINES = [
   "Having a rough day?",
@@ -12,8 +13,8 @@ const LINES = [
   "Share it and send it to someone who needs it.",
 ] as const;
 
-const TYPE_MS = 38;
-const HOLD_MS = 1700;
+const TYPE_MS = 24;
+const HOLD_MS = 1500;
 const LAST_HOLD_MS = 2400;
 
 // The sheep that opens the app. It types out each line in its speech bubble,
@@ -27,12 +28,18 @@ export function SheepHost({ onDone }: { onDone: () => void }) {
 
   const text = LINES[line];
   const shown = reduced ? text.length : typed;
-  const talking = started && shown < text.length && !reduced;
+  const typing = started && shown < text.length && !reduced;
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setStarted(true), INTRO.bubble * (reduced ? 250 : 1000));
+    const timer = window.setTimeout(() => setStarted(true), TALK.bubble * (reduced ? 250 : 1000));
     return () => window.clearTimeout(timer);
   }, [reduced]);
+
+  // The typing sound loops while a line types out, and stops as soon as it is done.
+  useEffect(() => {
+    if (!typing) return;
+    return playEffect("type", { loop: true });
+  }, [typing, line]);
 
   useEffect(() => {
     if (!started) return;
@@ -56,16 +63,16 @@ export function SheepHost({ onDone }: { onDone: () => void }) {
 
   return (
     <motion.div
-      className="absolute -bottom-[8svh] left-1/2 aspect-[1092/1440] h-[60svh] -translate-x-[45%] md:top-[22.95cqw] md:bottom-auto md:left-[36.5cqw] md:h-auto md:w-[31cqw] md:translate-x-0"
+      className="absolute -bottom-[8svh] left-1/2 aspect-[1092/1440] h-[60svh] -translate-x-1/2 md:top-[22.95cqw] md:bottom-auto md:left-[36.5cqw] md:h-auto md:w-[31cqw] md:translate-x-0"
       initial={{ opacity: 0, y: "30%" }}
       animate={{ opacity: 1, y: "0%" }}
       exit={{ opacity: 0, y: "75%", transition: { duration: 0.55, ease: [0.55, 0, 1, 0.45] } }}
-      transition={enterTransition(INTRO.sheep, reduced)}
+      transition={enterTransition(TALK.sheep, reduced)}
     >
       <motion.div
         className="relative size-full"
-        animate={talking ? { y: ["0%", "-1.2%", "0%"], rotate: [0, -1.2, 0] } : { y: "0%", rotate: 0 }}
-        transition={talking ? { duration: 0.34, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
+        animate={typing ? { y: ["0%", "-1.2%", "0%"], rotate: [0, -1.2, 0] } : { y: "0%", rotate: 0 }}
+        transition={typing ? { duration: 0.34, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
       >
         {/* Mirrored so the ball is on the bubble's side, as in the reference. */}
         <Image

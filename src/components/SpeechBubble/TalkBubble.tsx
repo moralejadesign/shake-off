@@ -18,7 +18,7 @@ export function TalkBubble({ text, shown, lineKey }: TalkBubbleProps) {
     <motion.div
       key={lineKey}
       aria-hidden
-      className="absolute bottom-full left-[57%] mb-[1em] w-max max-w-[78vw] -translate-x-1/2 origin-bottom text-[clamp(12px,3.4vw,16px)] md:top-[27.6%] md:bottom-auto md:left-[70%] md:mb-0 md:max-w-none md:translate-x-0 md:whitespace-nowrap md:origin-left md:text-[1.1cqw]"
+      className="absolute bottom-full left-1/2 mb-[1em] w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 origin-bottom text-center md:text-left text-[clamp(12px,3.4vw,16px)] md:top-[27.6%] md:bottom-auto md:left-[70%] md:mb-0 md:max-w-none md:translate-x-0 md:whitespace-nowrap md:origin-left md:text-[1.1cqw]"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 18 }}

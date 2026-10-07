@@ -13,7 +13,7 @@ The owner provides all content (the meme images). Do not add, generate, or chang
 - Motion (`motion` package, formerly Framer Motion, imported from `motion/react`) for the ball, the intro sequence, and UI transitions
 - `next/image` for all illustrations (ball, characters, title, background)
 - html-to-image for exporting the card as PNG
-- use-sound for the rattle sound (optional, add in polish phase)
+- Web Audio API for sound (`src/lib/sound.ts`), no audio library
 - Deploy target: Vercel
 
 ## Commands
@@ -162,15 +162,24 @@ Work one phase at a time. Stop after each phase and summarize what changed.
 - Title: `public/shake-off-title.png`, cream lettering. The share card uses `shake-off-ink.png`, a dark copy generated from it, because cream disappears on the white polaroid caption.
 - Background: `public/shakeoff-background2.png`.
 - Characters: `sheep-ball.png` and `dog-ball.png`, each holding an 8 ball.
-- Colors: cream `#f5f2e1` (paper, bubble), sky blue `#2f7fd8`, ink `#141414`.
-- Corner labels: "Shake Off" top left, "Build by moraleja.co" top right, "V 0.1 // 2026" bottom right.
+- Colors: cream `#f6f6e3` (speech bubble), sky blue `#2f7fd8`, ink `#141414`.
+- Corners (`Scene/CornerLabels.tsx`): "Shake Off" top left (desktop only), IAF symbol top center (top left on phones), "→ sessions.forhuman.studio/" top right linking to https://sessions.forhuman.studio/, for human logo (http://forhuman.studio/) x moraleja.co logo (https://moraleja.co/) bottom left, version (desktop only) and sound button bottom right. Links open in a new tab.
 - When replacing an image, use a new file name. The image optimizer caches by URL, so a file overwritten under the same name can keep serving the old version.
 
 ## Landing flow
 
+0. Start: background, title, and the dalmatian (`dog-ball.png`, standing where the sheep will) with a "Tap to start" button. The dog drops out on the tap as the sheep comes in. Browsers only allow sound after a tap, so this tap unlocks audio and starts the music.
 1. Intro: title, then the sheep (mirrored, ball toward the bubble) bobs as it "talks", typing three lines in its bubble: "Having a rough day?", "Shake the ball and get a good meme.", "Share it and send it to someone who needs it." A Skip button, or shaking the phone, jumps ahead.
 2. Shake stage: the sheep drops out, the title moves behind the balls (desktop) or stays above them (phone), and the two balls fly in. Positions follow the owner's 2000x1125 references inside a 16:9 frame (`cqw` units) on desktop.
 3. Shake: big rattle (up to about 64px and 30deg, with a squash) for 1s, then the "8" ball slides aside while the back ball comes forward with the meme in its window, then the card opens.
+
+## Sound
+
+- Files in `public/audio/`: `music.mp3` (background loop), `shake.mp3` (ball rattle), `type.wav` (bubble typing).
+- `src/lib/sound.ts` owns all audio. Effects play from decoded buffers; the music streams from an `<audio>` element routed through a gain node, because iOS ignores `volume` on plain audio elements.
+- Music sits at 0.08 gain so effects stay easy to hear. The typing sound loops only while a line types out. The shake sound scales with shake strength.
+- `startAudio()` must be called synchronously inside a tap handler. Audio pauses while the tab is hidden.
+- The speaker button (bottom right) mutes everything; the choice is stored in `localStorage` under `shakeoff:muted`.
 
 ## Open questions for the owner
 

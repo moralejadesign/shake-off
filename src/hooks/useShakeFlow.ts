@@ -3,6 +3,7 @@
 import { useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { pickAnswer } from "@/lib/pickAnswer";
+import { playEffect } from "@/lib/sound";
 import type { Answer } from "@/lib/types";
 
 // idle -> shaking (balls rattle) -> revealing (meme in the ball window) -> card
@@ -41,6 +42,8 @@ export function useShakeFlow(answers: readonly Answer[]) {
       const settle = reduced ? SHAKE_TIMING.reducedSettleMs : SHAKE_TIMING.settleMs;
       const hold = reduced ? SHAKE_TIMING.reducedHoldMs : SHAKE_TIMING.holdMs;
 
+      // Harder shakes rattle louder.
+      playEffect("shake", { gain: 0.6 + 0.4 * intensity });
       setAnswer((last) => pickAnswer(answers, last?.id ?? null));
       setShake((last) => ({ id: last.id + 1, intensity }));
       setPhase("shaking");

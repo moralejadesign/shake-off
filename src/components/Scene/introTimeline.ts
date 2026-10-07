@@ -1,13 +1,19 @@
 import type { Transition } from "motion/react";
 
-// Start times in seconds for the intro: the scene, then the sheep, then its speech bubble.
+// Start times in seconds from page load: the scene, the title, the dog, then the start button.
 export const INTRO = {
   background: 0,
   labels: 0.3,
   title: 0.5,
-  sheep: 1.3,
-  bubble: 2.1,
-  skip: 2.6,
+  dog: 1.1,
+  startButton: 1.8,
+} as const;
+
+// Start times in seconds from the start tap: the sheep, then its speech bubble.
+export const TALK = {
+  sheep: 0.35,
+  bubble: 1.05,
+  skip: 1.5,
 } as const;
 
 // Start times in seconds for the shake stage, counted from when the sheep leaves.
