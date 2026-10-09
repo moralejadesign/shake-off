@@ -13,6 +13,7 @@ The owner provides all content (the meme images). Do not add, generate, or chang
 - Motion (`motion` package, formerly Framer Motion, imported from `motion/react`) for the ball, the intro sequence, and UI transitions
 - `next/image` for all illustrations (ball, characters, title, background)
 - html-to-image for exporting the card as PNG
+- `@vercel/analytics` for page view analytics
 - Web Audio API for sound (`src/lib/sound.ts`), no audio library
 - Deploy target: Vercel
 
@@ -134,7 +135,7 @@ type Answer = { id: string; imageUrl: string; width: number; height: number; alt
 - Do not add, remove, or change meme images. Content comes from the owner.
 - Do not use third-party meme templates, characters, or logos.
 - Do not add a backend, database, or auth. This app is fully static and client-side.
-- Do not add analytics until asked.
+- Analytics: Vercel Web Analytics (`<Analytics />` in `layout.tsx`), added at the owner's request. No other analytics or tracking.
 - Do not use em dashes in any copy, comments, or docs.
 
 ## Build phases
